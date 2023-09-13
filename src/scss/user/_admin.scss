@@ -7,9 +7,9 @@
   align-items:flex-start;
   background:#282B28;
 
-  .items-nav {
+  .itens-nav {
     position:fixed;
-    bottom:2rem;
+    bottom:2.5rem;
     border:3px solid #282B28;
     -webkit-box-shadow: 0px 0px 9px 1px #854DFF; 
     box-shadow: 0px 0px 9px 1px #854DFF;
@@ -17,20 +17,20 @@
     left:50%;
     background:#1f2024;
     @include flex;
-    gap:1rem;
-    padding:.25rem 1rem;
+    gap:1.5rem;
+    padding:.25rem 1.5rem;
     transform:translateX(-50%) translateY(50%);
 
     svg {
-      width:prem(34);
-      height:prem(34);
+      width:prem(38);
+      height:prem(38);
       cursor:pointer;
       padding-right:1rem;
       border-right:1px solid rgba(234,240,206,.1);
 
       &.remove-border {
-        width:prem(27);
-        height:prem(27);
+        width:prem(21);
+        height:prem(21);
         padding-right:0;
         border-right:0px solid rgba(234,240,206,.1);
       }
@@ -131,7 +131,7 @@
     -webkit-animation:show-from-right .3s linear forwards;
     animation:show-from-right .3s linear forwards;
     width:prem(890);
-    padding:prem(27) 1rem;
+    padding:prem(27) 1rem 6rem 1rem;
     background:#DBDBD7;
   }
 
@@ -205,6 +205,10 @@
         }
       }
 
+      &.m-deposito li:first-child {
+        font-size:prem(14) !important;
+      }
+
       li {
         @include transition;
         font-family:$poppins;
@@ -274,9 +278,9 @@
   .bonus {
     @include flex;
     justify-content:left;
-
     flex-wrap:wrap;
     width:prem(700);
+    margin-top:2rem;
     gap:1rem;
 
     h2 {
@@ -703,5 +707,176 @@
 
   100% {
     transform:scale(1);
+  }
+}
+
+@media (max-width:prem(1100)) {
+  .dashboard {
+    width:100vw;
+
+    nav {
+      display:none;
+    }
+
+    .dados {
+      padding:prem(27) 3rem 6rem 3rem;
+      width:100%;
+    }
+
+    .itens-nav {
+      border-radius:prem(0);
+      gap:2rem;
+      bottom:1.7rem;
+      width:100vw;
+      border:3px solid transparent;
+      border-top:3px solid rgba(133,77,255,.5);
+      -webkit-box-shadow:none; 
+    box-shadow:none;
+
+      svg {
+        width:prem(41);
+        height:prem(41);
+        padding-right:1rem;
+
+        &.remove-border {
+          width:prem(25);
+          height:prem(25);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width:prem(935)) {
+  .dashboard {
+
+    .dados {
+      padding:prem(27) 3rem 6rem 3rem;
+      width:100%;
+    }
+
+    .blocos {
+      flex-wrap:wrap;
+      justify-content:left;
+
+      ul {
+        width:calc(50% - 1rem);
+
+        li:last-child svg {
+          left:70%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width:prem(820)) {
+  .dashboard {
+    .produtores, .usuarios {
+      flex-wrap:wrap;
+      width:100%;
+      overflow-x:auto;
+      padding-right:1rem;
+      padding-bottom:.5rem;
+      scrollbar-width:thin;
+      scrollbar-color:#7c6a6a;
+
+      &::-webkit-scrollbar {
+        width:.43rem;
+        height:.75rem;
+      }
+    
+      &::-webkit-scrollbar-track {
+        background:$leve-white;
+        border-radius:0 0 .1rem .1rem;
+      }
+    
+      &::-webkit-scrollbar-thumb {
+        background:$onyx;
+        background:$onyx;
+        border:.375rem solid $onyx;
+      }
+  
+      table {
+        width: 100%;
+        min-width:prem(594);
+      }
+    }
+  }
+}
+
+@media (max-width:prem(660)) {
+  .dashboard {
+
+    .dados {
+      padding:prem(27) 1rem 6rem 1rem;
+    }
+
+    .painel {
+      flex-wrap:wrap;
+      gap:1rem;
+
+      h1 {
+        font-size:prem(30);
+      }
+    }
+
+    .blocos {
+      ul {
+        li:last-child svg {
+          left:40%;
+        }
+      }
+    }
+
+    .lucros {
+      width:100%;
+      
+      span {
+        padding:0 .25rem;
+        font-size:prem(15);
+
+        ul {
+          padding:.5rem .75rem;
+          height:max-content;
+          gap:0;
+          justify-content:space-between;
+
+          &.conquista {
+            padding:0rem .75rem;
+            height:4rem;
+          }
+        }
+      }
+    }
+
+    .bonus {
+      width:100%;
+
+      form {
+        margin-left:0rem;
+      }
+    }
+  }
+}
+
+@media (max-width:prem(460)) {
+  .dashboard {
+
+    .itens-nav {
+      justify-content:space-between;
+      padding:.25rem 2rem;
+      gap:0;
+    }
+
+    .blocos {
+      ul {
+        width:100%;
+
+        li:last-child svg {
+          left:70%;
+        }
+      }
+    }
   }
 }

@@ -51,7 +51,7 @@ const App = () => {
 
       <Link to='admin'>
         <button 
-          className='admin'
+          className='admin active'
           onClick={ handleLinks }>
           <Admin/>
         </button>

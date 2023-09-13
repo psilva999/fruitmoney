@@ -56,6 +56,20 @@ const Admin = () => {
               <Arrow/>
             </span>
           </Link>
+
+          <Link activeClass="active"
+            to='lucro-title'
+            spy={ true }
+            smooth={ true }
+            offset={ -100 }
+            duration={ 500 }
+            className='link-scroll'>
+              <span className='premiada'>
+                <Premiada/>
+                <p>Lucros</p>
+                <Arrow/>
+              </span>
+          </Link>
           
           <Link activeClass="active"
             to='influencers-title'
@@ -82,20 +96,6 @@ const Admin = () => {
               <span>
                 <Users/>
                 <p>Usuários</p>
-                <Arrow/>
-              </span>
-          </Link>
-
-          <Link activeClass="active"
-            to='lucro-title'
-            spy={ true }
-            smooth={ true }
-            offset={ -100 }
-            duration={ 500 }
-            className='link-scroll'>
-              <span className='premiada'>
-                <Premiada/>
-                <p>Lucros</p>
                 <Arrow/>
               </span>
           </Link>
@@ -130,12 +130,12 @@ const Admin = () => {
 
         <div className='blocos'>
           <ul>
-            <li>Faturamento: R$ 1700</li>
+            <li>Lucros: R$ 17030</li>
             <li>Detalhes <Arrow/></li>
           </ul>
 
-          <ul>
-            <li>Maior depósito: R$ 300</li>
+          <ul className='m-deposito'>
+            <li>Maior Depósito: R$ 300</li>
             <li>Detalhes <Arrow/></li>
           </ul>
 
@@ -170,6 +170,50 @@ const Admin = () => {
             <li>Bloqueados: 120</li>
             <li>Detalhes <Arrow/></li>
           </ul>
+        </div>
+
+        <div className='lucros' id='lucro-title'>
+          <h2>Lucros</h2>
+
+          <button className="add">+ ADICIONAR</button>
+          
+          <span>
+            <ul>
+              <li>R$ 100 mil</li>
+              
+              <li>
+                <PremiadaF className=''/> 
+                <p>100 Frutas Premiadas</p>
+              </li>
+
+              <Awards className='awards'/>
+              <li className='porcentagem'>0%</li>
+            </ul>
+
+            <ul className='carregando'>
+              <li className='lucro'>R$ 50 mil</li>
+              
+              <li>
+                <PremiadaF className=''/> 
+                <p>50 Frutas Premiadas</p>
+              </li>
+
+              <Awards className='awards'/>
+              <li className='porcentagem'>41%</li>
+            </ul>
+
+            <ul className='conquista'>
+              <li>R$ 10 mil</li>
+              
+              <li>
+                <PremiadaF className=''/> 
+                <p>10 Frutas Premiadas</p>
+              </li>
+
+              <Awards className='awards active'/>
+              <li className="porcentagem">100%</li>
+            </ul>
+          </span>
         </div>
 
         <div className='bonus'>
@@ -410,53 +454,9 @@ const Admin = () => {
           </table>
         </div>
 
-        <div className='lucros' id='lucro-title'>
-          <h2>Lucros</h2>
-
-          <button className="add">+ ADICIONAR</button>
-          
-          <span>
-            <ul>
-              <li>R$ 100 mil</li>
-              
-              <li>
-                <PremiadaF className=''/> 
-                <p>100 Frutas Premiadas</p>
-              </li>
-
-              <Awards className='awards'/>
-              <li className='porcentagem'>0%</li>
-            </ul>
-
-            <ul className='carregando'>
-              <li className='lucro'>R$ 50 mil</li>
-              
-              <li>
-                <PremiadaF className=''/> 
-                <p>50 Frutas Premiadas</p>
-              </li>
-
-              <Awards className='awards'/>
-              <li className='porcentagem'>41%</li>
-            </ul>
-
-            <ul className='conquista'>
-              <li>R$ 10 mil</li>
-              
-              <li>
-                <PremiadaF className=''/> 
-                <p>10 Frutas Premiadas</p>
-              </li>
-
-              <Awards className='awards active'/>
-              <li className="porcentagem">100%</li>
-            </ul>
-          </span>
-        </div>
-
       </article>
 
-      <div className='items-nav'>
+      <div className='itens-nav'>
         <Link activeClass="active"
           to='painel-admin'
           spy={ true }
@@ -467,7 +467,17 @@ const Admin = () => {
 
           <Admins/>
         </Link>
-        
+
+        <Link activeClass="active"
+          to='lucro-title'
+          spy={ true }
+          smooth={ true }
+          offset={ -100 }
+          duration={ 500 }
+          className='link-scroll'>
+            <Premiada/>
+        </Link>
+
         <Link activeClass="active"
           to='influencers-title'
           spy={ true }
@@ -486,17 +496,7 @@ const Admin = () => {
           offset={ -100 }
           duration={ 500 }
           className='link-scroll'>
-            <Users/>
-        </Link>
-
-        <Link activeClass="active"
-          to='lucro-title'
-          spy={ true }
-          smooth={ true }
-          offset={ -100 }
-          duration={ 500 }
-          className='link-scroll'>
-            <Premiada className='remove-border'/>
+            <Users className='remove-border'/>
         </Link>
 
         {/* <Charts/>
