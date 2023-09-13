@@ -1,0 +1,121 @@
+.afiliados {
+  .money {
+    padding:0 !important;
+    width:prem(160);  
+    height:prem(160);
+  }
+
+  article {
+    gap:2rem;
+  }
+
+  h1 {
+    margin-top:-.75rem;
+  }
+
+  div {
+    @include grid;
+
+    &.extrato {
+      margin-top:.5rem;
+      gap:1rem;
+      width:prem(550);
+
+      &:before {
+        position:relative;
+        content:'';
+        width:6rem;
+        top:-5px;
+        height:prem(1);
+        background:#42E2B8;
+        opacity:.3;
+      }
+
+      p {
+        justify-self:left;
+      }
+    }
+
+    .afiliado  {
+      background:linear-gradient(0deg, #F3DFBF 0%, #D5A6D5 100%);
+      padding:2.5px 5px;
+      border-radius:prem(6);
+    }
+  }
+
+  strong {
+    font-family:$poppins;
+    font-weight:600;
+    letter-spacing:1px;
+  }
+
+  h2 {
+    justify-self:left;
+    font-size:prem(19);
+  }
+
+  li {
+    width:100%;
+    @include flex;
+    justify-content:space-between;
+  }
+  
+  nav {
+    width:max-content;
+    gap:1rem;
+    @include flex;
+
+    ul {
+      display:grid;
+      gap:.75rem;
+
+      li:nth-child(even) {
+        background:linear-gradient(180deg, #D5A6D5 0%, #CC62CC 100%);
+      }
+
+      li:nth-child(odd) {
+        background:#E3B23C;
+      }
+    }
+
+    li {
+      gap:1rem;
+      padding:2.5px 5px;
+      border-radius:prem(6);
+      justify-content:left;
+      font-size:prem(14);
+
+      strong:first-child {
+        width:prem(160);
+      }
+    }
+
+    &.equipe {
+      width:prem(550);
+      @include grid;
+
+      h2, ul {
+        justify-self:left;
+        width:prem(550);
+      }
+
+      h2 {
+        letter-spacing:2px;
+        text-align:left;
+      }
+
+      li {
+        @include flex;
+        justify-content:space-between;
+      }
+    }
+  }
+
+  a {
+    width:prem(260);
+
+    .major-button {
+      width:100%;
+    }
+  }
+} 

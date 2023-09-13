@@ -1,0 +1,119 @@
+footer {
+  width:100vw;
+  background:#271F30;
+  padding:1rem 0 1rem 0;
+  gap:prem(64);
+
+  @include grid;
+
+  section, div {
+    @include flex;
+    gap:3rem;
+  }
+
+  section {
+    width:prem(880);
+    height:prem(250);
+    justify-content:space-between;
+
+    svg {
+      width:prem(450);
+      height:prem(200);
+    }
+
+    article, ul {
+      display:grid;
+    }
+
+    article {
+      gap:.75rem;
+    }
+
+    ul {
+      gap:.5rem;
+    }
+  }
+
+  h2, p {
+    font-family:$spaceMono;
+  }
+
+  h2 {
+    color:$leve-white;
+    font-size:prem(23);
+  }
+
+  p {
+    color:rgba(251,251,251,.6);
+  }
+
+  h2 {
+    font-weight:bolder;
+  }
+
+  li {
+    color:rgba(251,251,251,.8);
+    font-weight:300;
+    font-family:$poppins; 
+
+    &, &:hover {
+      @include transition;
+    }
+
+    &:hover {
+      color:#FFEE31;
+    }
+  }
+
+  .copy {
+    height:prem(40);
+    justify-content:space-between;
+    width:prem(820);
+  }
+}
+
+@media (max-width: prem(930)) {
+  footer {
+    section, .copy {
+      width:90%;
+      padding:0 .5rem;
+      justify-content:space-between;
+      gap:0;
+      flex-wrap:wrap;
+      height:max-content;
+    }
+
+    section svg {
+      width:prem(300);
+      height:prem(250);
+    }
+  }
+}
+
+@media (max-width: prem(650)) {
+  footer {
+    gap:prem(32);
+
+    section svg {
+      width:prem(190);
+      height:prem(140);
+    }
+  }
+}
+
+@media (max-width: prem(530)) {
+  footer {
+    section, .copy {
+      width:prem(270);
+    }
+
+    .copy {
+      justify-content:center;
+    }
+
+    section svg {
+      width:100%;
+      height:prem(140);
+    }
+  }
+}

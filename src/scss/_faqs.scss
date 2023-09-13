@@ -1,0 +1,161 @@
+.faqs {
+  background:linear-gradient(0deg, #854DFF 0%, rgba(254,198,1,.3) 50%, #854DFF 100%);
+  width:100vw;
+  padding:7rem 0;
+  gap:3rem;
+
+  &, article {
+    @include grid;
+  }
+
+  h1, h2, article, div {
+    width:prem(880);
+  }
+
+  h1, h2 {
+    text-align:left;
+  }
+
+  h1 {
+    color:$leve-white;
+    font-size:prem(53);
+  }
+
+  div {
+    display:flex;
+    flex-wrap:wrap;
+    gap:3rem;
+  }
+
+  article {
+    gap:prem(15);
+    background:#854DFF;
+    border-radius:prem(5);
+    padding:.5rem 1rem;
+
+    h2 {
+      color:#F9C784;
+      font-size:prem(24);
+    }
+
+    p {
+      font-family:$poppins;
+      font-size:prem(16);
+      letter-spacing:1px;
+      width:prem(800);
+      color:#FBFBFF;
+      justify-self:left;
+    }
+  }
+
+  .bichos {
+    opacity:1;
+    gap:0;
+    width:prem(120);
+    height:prem(60);
+    position:absolute;
+    z-index:2;
+    margin-top:-10rem;
+    margin-left:10rem;
+    @include flex;
+
+    svg {
+      width:prem(70);
+      height:prem(70);
+      opacity:.8;
+      position:relative;
+
+      &:nth-child(even) {
+        width:prem(60);
+        height:prem(60);
+        transform:rotate(-15deg);
+      }
+
+      &:nth-child(1) {
+        top:0;
+        left:0;
+      }
+
+      &:nth-child(2) {
+        top:8rem;
+        left:-18rem;
+        opacity:.5;
+      }
+
+      &:nth-child(3) {
+        top:-3rem;
+        left:40rem;
+        opacity:.5;
+      }
+
+      &:nth-child(4) {
+        top:18rem;
+        left:-17rem;
+      }
+
+      &:nth-child(5) {
+        top:2rem;
+        left:45rem;
+        transform:scaleX(-1) rotate(-23deg);
+        filter:FlipH;
+      }
+
+      &:nth-child(6) {
+        top:10rem;
+        left:46rem;
+        opacity:.5;
+        transform:scaleX(-1) rotate(-13deg);
+        filter:FlipH;
+      }
+
+      &:nth-child(7) {
+        top:-20rem;
+        left:21rem;
+        opacity:.3;
+        transform:rotate(13deg);
+      }
+    }
+  }
+}
+
+@media (max-width:prem(1100)) {
+  .faqs {
+    svg {
+      display:none;
+
+      &:nth-child(1) {
+        display:block;
+      }
+    }
+  }
+}
+
+@media (max-width:prem(930)) {
+  .faqs {
+    
+    div {
+      gap:1.5rem;
+    }
+
+    div, h1 {
+      width:90vw;
+      padding:0 .5rem;
+    }
+
+    h2, article {
+      width:100%;
+    }
+
+    span {
+      display:none;
+    }
+
+    article {
+      padding:.5rem 2rem 1rem 1rem; 
+
+      p {
+        width:100%;
+      }
+    }
+  }
+}

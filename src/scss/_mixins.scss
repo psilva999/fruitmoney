@@ -1,0 +1,26 @@
+@import 'config';
+
+//px to rem 
+@function prem($px, $rem: 16) {
+  @return calc($px / $rem) * 1rem;
+}
+
+//mixins
+@mixin flex {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+@mixin grid {
+  display:grid;
+  place-items:center;
+}
+
+@mixin weight {
+  font-weight:300;
+}
+
+@mixin transition {
+  transition:.3s;
+}

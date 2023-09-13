@@ -1,0 +1,385 @@
+.deposito {
+  .qr-code {
+    display:none;
+  
+    &.active {
+      @include grid;
+
+      .money {        
+        svg {
+          width:120px;
+          height:120px;
+        }
+      }
+
+      h1, h2, h3 {
+        text-align:center;
+      }
+
+      h1 {
+        width:prem(670);
+      }
+
+      li {
+        border-radius:23px;
+        overflow:hidden;
+        height:max-content;
+        margin-top:1rem;
+      }
+
+      h3 {
+        font-size:prem(25);
+        color:$leve-white;
+        margin-top:-1rem;
+        background:linear-gradient(0deg, #432680 0%, #854DFF 100%);
+        padding:3px 12px;
+        letter-spacing:2px;
+        -webkit-animation:pisca-claro 3s linear infinite;
+        animation:pisca-claro 3s linear infinite;
+        width:prem(250);
+        font-family:$spaceMono;
+        border-radius:prem(16);
+      }
+
+      div {
+        @include grid;
+        gap:1rem;
+      }
+
+      .to-copy {
+        font-size:prem(15);
+        width:prem(350);
+        text-align:center;
+      }
+
+      h2 {
+        font-size:prem(37);
+        margin-top:-.7rem;
+      }
+
+      button {
+        margin-top:-1rem;
+        width:prem(270);
+      }
+    }
+  }
+
+  article {
+    display:none;
+    gap:2rem;
+
+    &.active {
+      @include grid;
+    }
+  }
+
+  div {
+    @include grid;
+
+    &:nth-child(2) p {
+      width:prem(420);
+      text-align:center;
+    }
+  }
+
+  form {
+    margin-top:1rem;
+
+    &, span {
+      @include grid;
+    }
+    
+    span {
+      height:prem(54);
+    }
+
+    span:first-child {
+
+      input:focus + label:after {
+        content:'Exemplo: 123.456.789-00';
+        margin-top:prem(50);
+        margin-left:prem(133);
+        -webkit-animation:show-label-after .7s linear forwards;
+        animation:show-label-after .7s linear forwards;
+      }
+    }
+
+    span:last-child {
+      margin-top:1.9rem;
+
+      input:focus + label:after {
+        content:'Valor mínimo: R$10 (centavos não são permitidos)';
+        margin-top:prem(52);
+        width:prem(380);
+        margin-left:prem(-10);
+        -webkit-animation:show-label-after .6s linear forwards;
+        animation:show-label-after .6s linear forwards;
+      }
+    }
+
+    span:first-child label {
+      left:-10.2rem;
+      top:-2.45rem;
+    }
+
+    span:last-child label {
+      left:-5.2rem;
+    }
+  }
+
+  input {
+    background:#DCD9D9;
+    width:prem(400);
+    border:2px solid rgba(31,32,36,.8);
+    border-radius:prem(9);
+    font-size:prem(16);
+    letter-spacing:prem(2);
+    color:#5C5C5F;
+    padding:.8rem 1rem;
+    font-family:$poppins;
+  }
+
+  input.checked {
+    border:2px solid #854DFF;
+    box-shadow:0px 0px 9px 0 #854DFF;
+  }
+
+  input.checked + label.up {
+    box-shadow:0px -1px 1px 0 #854DFF;
+    border-top:2px solid #854DFF !important;
+    border-left:2px solid #854DFF !important;
+    border-right:2px solid #854DFF !important;
+  }
+
+  input.checked:focus + label.up:after {
+    content:'';
+  }
+
+  input::-webkit-inner-spin-button,
+  input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  form span:first-child {
+    label {
+      -webkit-animation:label-down-cpf .3s linear forwards;
+      animation:label-down-cpf .3s linear forwards;
+    }
+
+    input:focus + label, input.checked + label.up, label.up {
+      -webkit-animation:label-up-cpf .3s linear forwards;
+      animation:label-up-cpf .3s linear forwards;
+    }
+  }
+
+  form span:last-child {
+    label {
+      -webkit-animation:label-down-deposito .3s linear forwards;
+      animation:label-down-deposito .3s linear forwards;
+    }
+
+    input:focus + label, input.checked + label.up, label.up {
+      -webkit-animation:label-up-deposito .3s linear forwards;
+      animation:label-up-deposito .3s linear forwards;
+    }
+  }
+
+  label {
+    justify-content:left;
+    user-select:none;
+    position:relative;
+    font-family:$poppins;
+    letter-spacing:prem(2);
+    opacity:.6;
+    top:-2.5rem;
+    text-align:center;
+    color:#5C5C5F;
+    background:#DCD9D9;
+  }
+
+  input:focus + label:after {
+    display:block;
+    position:absolute;
+    font-size:prem(11);
+    color:$leve-white;
+    width:18rem;
+  }
+
+  .valores {
+    @include flex;
+    width:prem(450);
+    margin-top:1rem;
+    flex-wrap:wrap;
+    gap:.5rem;
+
+    button {
+      border-radius:prem(6);
+      border:3px solid #1f2024;
+      background:linear-gradient(0deg, #9ACD32 0%, #B4D573 100%);
+      font-size:prem(18);
+      padding:.25rem .5rem;
+      color:$leve-white;
+      width:prem(160);
+      height:prem(90);
+      @include transition;
+
+      &:hover, &.active {
+        background:#854DFF;
+        @include transition;
+      }
+    }
+  }
+
+  button {
+    &:disabled {
+      opacity:.6;
+      -webkit-animation:none;
+      animation:none;
+    }
+
+    &:disabled:hover {
+      background:#A9D4CA;
+      -webkit-animation:none;
+      animation:none;
+      color:#fbfbfb;
+      cursor:initial;
+      box-shadow:-6px 6px 0 0 #1f2024;
+    }
+  }
+}
+
+@media (max-width:prem(500)) {
+  .deposito article {
+    form {
+      label {
+        width:prem(175) !important;
+        text-align:left;
+        left:-1.5rem !important;
+        top:-2.3rem !important;
+        -webkit-animation:label-down-jogo-mobile .3s linear forwards;
+        animation:label-down-jogo-mobile .3s linear forwards;
+        transition:.3s;
+        border-top:0px solid rgba(31,32,36,.8) !important;
+    border-left:0px solid rgba(31,32,36,.8) !important;
+    border-right:0px solid rgba(31,32,36,.8) !important;
+      }
+
+      input:focus + label, label.up {
+        -webkit-animation:label-up-jogo-mobile .3s linear forwards;
+        animation:label-up-jogo-mobile .3s linear forwards;
+        border-top:2px solid rgba(31,32,36,.8) !important;
+    border-left:2px solid rgba(31,32,36,.8) !important;
+    border-right:2px solid rgba(31,32,36,.8) !important;
+        transition:.3s;
+        width:prem(120) !important;
+        top:prem(-67) !important;
+        text-align:center;
+        left:-3rem !important;
+        font-size:prem(12) !important;
+      }
+
+      input.checked + label.up {
+        border-top:2px solid #854DFF !important;
+    border-left:2px solid #854DFF !important;
+    border-right:2px solid #854DFF !important;
+      }
+    
+      span:first-child input:focus + label:after {
+        width:max-content;
+        top:1rem !important;
+        left:-5.5rem !important;
+      }
+
+      span:last-child {
+        input + label:after {
+          width:max-content;
+          top:1rem !important;
+          left:-4.5rem !important;
+        }
+      }
+
+      span:last-child {
+        label {
+          width:prem(200) !important;
+          left:-1rem !important;
+        }
+
+        input:focus + label:after {
+          content:'Valor mínimo: R$10';
+          left:-1rem !important;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width:prem(800)) {
+  .deposito {
+    .qr-code {
+      display:none;
+    
+      &.active {
+        @include grid;
+  
+        .money {        
+          svg {
+            width:90px;
+            height:90px;
+          }
+        }
+  
+        h1, h2, h3 {
+          text-align:center;
+        }
+  
+        h1 {
+          width:100%;
+          font-size:prem(40);
+        }
+  
+        li {
+          border-radius:23px;
+          overflow:hidden;
+          height:max-content;
+          margin-top:1rem;
+        }
+  
+        h3 {
+          font-size:prem(19);
+          color:$leve-white;
+          margin-top:-1rem;
+          background:linear-gradient(0deg, #432680 0%, #854DFF 100%);
+          padding:3px 12px;
+          letter-spacing:2px;
+          -webkit-animation:pisca-claro 3s linear infinite;
+          animation:pisca-claro 3s linear infinite;
+          width:prem(250);
+          font-family:$spaceMono;
+          border-radius:prem(16);
+        }
+  
+        div {
+          @include grid;
+          gap:1rem;
+        }
+  
+        .to-copy {
+          font-size:prem(15);
+          width:prem(280);
+          text-align:center;
+        }
+  
+        h2 {
+          font-size:prem(37);
+          margin-top:-.7rem;
+        }
+  
+        button {
+          margin-top:-1rem;
+          width:prem(270);
+        }
+      }
+    }
+  }
+}

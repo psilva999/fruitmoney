@@ -1,0 +1,11 @@
+{
+  "files.exclude": {
+    "node_modules": true,
+    ".vscode": true,
+    "package-lock.json": true,
+    "package.json": true,
+    ".eslintrc.cjs": true,
+    "src\\css": true,
+    "favicon.svg": true
+  }
+}

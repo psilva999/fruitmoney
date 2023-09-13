@@ -1,0 +1,386 @@
+.indique, .saque, .afiliados, .deposito {
+  padding:10rem 0 7rem 0 !important;
+}
+
+.nan {
+  height:100vh;
+}
+
+.nan article {
+  gap:2rem;
+}
+
+.indique, .jogar, .saque, .afiliados, .deposito, .nan {
+  width:100vw;
+  background:$clear-mode;
+  
+  &, article {
+    @include grid;
+  }
+
+  .dica {
+    font-family:$spaceMono;
+    position:relative;
+    text-align:right;
+    top:3px;
+    font-size:prem(14);
+    width:90%;
+  }
+
+  .money {
+    background:#FDFDFD;
+    border-radius:100%;
+    padding:1.5rem 1.5rem 1.3rem 1.5rem;
+    margin-top:prem(-140);
+    margin-bottom:prem(0);
+    border:3px solid #1f2024;
+    
+    img { 
+      opacity:.8;
+      width:prem(100);
+    }
+  }
+
+  p {
+    font-family:$spaceMono;
+    color:black;
+    font-size:prem(17);
+  }
+
+  article {
+    border-radius:prem(12);
+    border:3px solid rgba(31,32,36,.8);
+    border-top:0px solid transparent;
+    width:prem(880);
+    padding:4rem 2rem;
+    -webkit-animation:from-bottom .7s linear forwards;
+    animation:from-bottom .7s linear forwards;
+    background:#1A936F;
+    background-image:linear-gradient(-30deg, #C1DF1F -30%, #1A936F 50%, #C1DF1F 130%);
+
+    &.purple {
+      background:#1A936F;
+      background-image:linear-gradient(-30deg, #8F45FF -20%, #1A936F 50%, #8F45FF 120%);
+    }
+
+    &.red {
+      background:#6622CC;
+      background-image:linear-gradient(-30deg, #B3174B -00%, #FF3B7C 50%, #B3174B 100%);
+    }
+
+    &.blue {
+      background:#6622CC;
+      background-image:linear-gradient(-30deg, #1F7A8C -30%, #45C0D9 50%, #1F7A8C 130%);
+    }
+  }
+
+  h1, h2 {
+    color:$leve-white;
+  }
+
+  h1, h3 {
+    font-family:$work;
+    font-size:prem(52);
+    font-style: italic;
+  }
+
+  .container-saldo {
+    position:relative;
+    top:-2rem;
+    background:linear-gradient(235deg, #432680 0%, #854DFF 100%);
+    color:$leve-white;
+    padding:.15rem .5rem;
+    border-radius:prem(6);
+    -webkit-animation:pisca-claro 3s linear infinite;
+    animation:pisca-claro 3s linear infinite;
+  }
+
+  .copy-filiados {
+    @include grid;
+    gap:.5rem;
+    background:linear-gradient(180deg, #F3DFBF 0%, rgba(243,223,191,.8) 100%);
+    border-radius:prem(12);
+    padding:.25rem .5rem;
+    cursor:pointer;
+
+    p {
+      color:$onyx;
+      width:100% !important;
+      text-align:center;
+    }
+
+    button {
+      width:6rem;
+      letter-spacing:2px;
+      color:$leve-white;
+      padding:.55rem .5rem;
+      position:relative;
+      border-radius:0 prem(3) prem(3) 0;
+      font-size:prem(15);
+      background:#B6174B;
+    }
+  }
+
+  .major-button {
+    &:disabled {
+      opacity:.6;
+      -webkit-animation:none;
+      animation:none;
+    }
+
+    &:disabled:hover {
+      background:#854DFF;
+      -webkit-animation:none;
+      animation:none;
+      cursor:initial;
+      box-shadow:-6px 6px 0 0 #1f2024;
+    }
+  }
+}
+
+.indique {
+  article {
+    gap:1rem;
+  }
+
+  div {
+    @include grid;
+    gap:1rem;
+  }
+
+  div:last-child {
+    margin-top:2rem;
+
+    h2 {
+      justify-self: left;
+    }
+
+    li {
+      @include flex;
+      justify-content:space-between;
+      width:100%;
+    }
+  }
+
+  .major-button {
+    font-size:prem(23);
+  }
+}
+
+@media (max-width: prem(900)) {
+  .jogar {
+    padding:5rem 0 10rem 0;
+  }
+
+  .indique, .saque, .afiliados, .deposito {
+    padding:9rem 0 7rem 0 !important;
+  }
+  
+  .indique, .jogar, .saque, .afiliados, .deposito, .nan {
+    article {
+      width:95vw;
+      border:2px solid rgba(31,32,36,.8);
+      border-top:0px solid transparent;
+    }
+  }
+}
+
+@media (max-width: prem(670)) {  
+  .indique, .saque, .afiliados, .deposito {
+    padding:7rem 0 7rem 0 !important;
+  }
+
+  .indique, .jogar, .saque, .afiliados, .deposito, .nan {
+
+    .money {
+      background:#FDFDFD;
+      border-radius:100%;
+      overflow:hidden;
+      padding:1.2rem 1rem 1.3rem 1rem;
+      margin-top:prem(-110);
+      border:3px solid #1f2024;
+      
+      img { 
+        opacity:.8;
+        width:prem(80);
+      }
+    }
+
+    h1 {
+      font-size:prem(42) !important;
+    }
+  }
+
+  .jogar article {
+    p {
+      width:prem(360);
+      font-size:prem(15);
+    }
+
+    form {
+      margin:.8rem 0;
+    }
+  }
+
+  .afiliados {
+    p {
+      text-align:center;
+    }
+
+    .money {
+      width:prem(130);
+      height:prem(130);
+    }
+
+    article {
+      gap:1rem;
+    }
+
+    h1 {
+      text-align:center;
+    }
+
+    div.extrato {
+      margin-left:-1.75rem;
+      width:prem(290);
+    }
+
+    nav {
+      @include grid;
+      
+      width:80%;
+      margin-left:-1.75rem;
+      margin-bottom:1rem;
+      
+      ul {
+        justify-self:left;
+        width:100%;
+      }
+
+      &.equipe {
+        width:100%;
+  
+        h2, ul {
+          justify-self:left;
+          width:100%;
+        }
+      }
+    }
+  }
+
+  .deposito div:nth-child(2) {
+
+    p {
+      width:prem(260) !important;
+    }
+  }
+
+  .deposito .valores {
+    width:prem(260) !important;
+    flex-wrap: wrap;
+
+    button {
+      font-size:prem(15) !important;
+      width:prem(120) !important;
+    }
+  }
+
+  .saque article {
+    gap:.5rem;
+
+    div p {
+      width:prem(260) !important;
+      text-align:center;
+    }
+  }
+}
+
+@media (max-width: prem(500)) {
+  .afiliados {
+    div.extrado {
+      margin-left:0;
+    }
+
+    .afiliado {
+      width:prem(275);
+    }
+    
+    strong {
+      font-size:.8rem !important;
+    }
+  }
+
+  .jogar article {
+    p {
+      width:prem(270);
+      font-size:prem(13);
+    }
+
+    form {
+      margin:.8rem 0;
+    }
+
+    div:last-child p {
+      width:prem(230);
+    }
+  }
+
+  .saque article form {
+    margin:.8rem 0 !important;
+  }
+
+  .saque .transacoes {
+    h2, p {
+      text-align:left;
+    }
+  }
+
+  .saque .historico li {
+    width:prem(250);
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+  .indique h1 {
+    text-align:center;
+  }
+
+  .saque .major-button {
+    width:prem(220);
+  }
+
+  .indique, .jogar, .saque, .afiliados, .deposito, .nan {
+
+    .copy-filiados {
+      width:prem(250);
+      flex-wrap:wrap;
+
+      .link-indique {
+        overflow-wrap: break-word;
+        width:prem(230) !important;
+        font-size:prem(12);
+      }
+    }
+
+    article {
+      padding:4rem .5rem;
+
+      h1 {
+        font-size:prem(30) !important;
+      }
+
+      form {
+        margin:0 0 0 0; 
+      }
+
+      label {
+        font-size:.9rem !important;
+      }
+
+      input {
+        width:prem(250);
+      }
+    }
+  
+  }
+}

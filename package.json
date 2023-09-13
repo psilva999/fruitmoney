@@ -1,0 +1,43 @@
+{
+  "name": "fruit-money",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build --mode production",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
+    "start": "node server.js",
+    "test:safari": "npx playwright test --headed --browser=webkit",
+    "test-ct": "playwright test -c playwright-ct.config.js"
+  },
+  "dependencies": {
+    "axios": "^1.5.0",
+    "crypto-js": "^4.1.1",
+    "jsonwebtoken": "^9.0.2",
+    "qrcode.react": "^3.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.15.0",
+    "react-scroll": "^1.8.9",
+    "vite-plugin-svgr": "^3.2.0"
+  },
+  "devDependencies": {
+    "@playwright/experimental-ct-react": "^1.37.1",
+    "@playwright/test": "^1.37.1",
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "@vitejs/plugin-react": "^4.0.3",
+    "eslint": "^8.45.0",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.3",
+    "vite": "^4.4.5"
+  },
+  "description": "",
+  "main": "server.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

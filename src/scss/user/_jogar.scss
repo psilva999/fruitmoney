@@ -1,0 +1,169 @@
+.jogar {
+  padding:7rem 0 10rem 0;
+}
+
+.jogar article {
+  gap:2rem;
+
+  div {
+    @include grid;
+    gap:1rem;
+  }
+
+  h1 {
+    display:block;
+    margin-top:-2rem;
+  }
+
+  p {
+    margin-top:-.5rem;
+    width:prem(560);
+    text-align:center;
+
+    svg {
+      position:relative;
+      top:prem(6);
+    }
+  }
+
+  form {
+    @include grid;
+    margin:1.5rem 0 1.5rem 0;
+
+    span {
+      height:prem(54);
+      width:100%;
+      @include grid;
+    }
+
+    input::-webkit-inner-spin-button,
+    input::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+
+  input {
+    background:#DCD9D9;
+    width:prem(400);
+    border:2px solid rgba(31,32,36,.8);
+    border-radius:prem(9);
+    font-size:prem(16);
+    letter-spacing:prem(2);
+    color:#5C5C5F;
+    padding:.8rem 1rem;
+    font-family:$poppins;
+  }
+
+  label {
+    width:prem(170);
+    justify-content:left;
+    user-select:none;
+    position:relative;
+    font-family:$poppins;
+    letter-spacing:prem(2);
+    opacity:.6;
+    left:-6.2rem;
+    top:-2.5rem;
+    text-align:center;
+    color:#5C5C5F;
+    background:#DCD9D9;
+    -webkit-animation:label-down-jogo .3s linear forwards;
+    animation:label-down-jogo .3s linear forwards;
+  }
+
+  input:focus + label, input.checked + label.up, label.up {
+    -webkit-animation:label-up-jogo .3s linear forwards;
+    animation:label-up-jogo .3s linear forwards;
+  }
+  
+  .dica {
+    font-family:$spaceMono;
+    position:relative;
+    text-align:right;
+    top:3px;
+    font-size:prem(14);
+    width:90%;
+  }
+
+  input:focus + label:after {
+    display:block;
+    position:absolute;
+    font-size:prem(11);
+    color:$leve-white;
+    width:18rem;
+    top:4.3rem;
+    left:10.8rem;
+    content:'Mínimo de R$1.00';
+    -webkit-animation:show-label-after .6s linear forwards;
+    animation:show-label-after .6s linear forwards;
+  }
+
+  input.checked {
+    border:2px solid #854DFF;
+    box-shadow:0px 0px 9px 0 #854DFF;
+  }
+
+  input.checked + label.up {
+    box-shadow:0px -1px 1px 0 #854DFF;
+    border-top:2px solid #854DFF !important;
+    border-left:2px solid #854DFF !important;
+    border-right:2px solid #854DFF !important;
+  }
+
+  input.checked:focus + label.up:after {
+    content:'';
+  }
+
+  .major-button {
+    width:prem(200);
+  }
+
+  div:last-child {
+    margin-top:-.5rem;
+  }
+}
+
+@media (max-width:prem(500)) {
+  .jogar article {
+    form {
+      label {
+        width:prem(175) !important;
+        text-align:left;
+        left:-1.5rem !important;
+        top:-2.3rem !important;
+        -webkit-animation:label-down-jogo-mobile .3s linear forwards;
+        animation:label-down-jogo-mobile .3s linear forwards;
+        transition:.3s;
+        border-top:0px solid rgba(31,32,36,.8) !important;
+    border-left:0px solid rgba(31,32,36,.8) !important;
+    border-right:0px solid rgba(31,32,36,.8) !important;
+      }
+
+      input:focus + label, label.up {
+        -webkit-animation:label-up-jogo-mobile .3s linear forwards;
+        animation:label-up-jogo-mobile .3s linear forwards;
+        border-top:2px solid rgba(31,32,36,.8) !important;
+    border-left:2px solid rgba(31,32,36,.8) !important;
+    border-right:2px solid rgba(31,32,36,.8) !important;
+        transition:.3s;
+        width:prem(160) !important;
+        top:prem(-67) !important;
+        left:-2rem !important;
+        font-size:prem(12) !important;
+      }
+
+      input.checked + label.up {
+        border-top:2px solid #854DFF !important;
+    border-left:2px solid #854DFF !important;
+    border-right:2px solid #854DFF !important;
+      }
+    
+      input:focus + label:after {
+        width:max-content;
+        top:4.1rem;
+        left:6.5rem;
+      }
+    }
+  }
+}

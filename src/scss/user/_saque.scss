@@ -1,0 +1,189 @@
+.saque {
+  .money img {
+    opacity:.3 !important;
+  }
+
+  div, form, span {
+    @include grid;
+  }
+
+  article {
+    gap:1rem;
+  }
+
+  .container-saldo {
+    top:0rem !important;
+    font-size:prem(14);
+  }
+
+  div {
+    gap:.5rem;
+  }
+
+  form {
+    margin-top:2rem;
+    gap:1.5rem;
+
+    span {
+      height:prem(54);
+      width:100%;
+
+      &:nth-child(1) {
+        input:focus + label:after {
+          content:'CPF, Telefone, etc';
+          width:max-content;
+          left:15.8rem;
+        }
+      }
+
+      &:nth-child(2) {
+        input:focus + label:after {
+          content:'min: R$10.00';
+          left:12rem;
+        }
+      }
+    }
+  }
+
+  input {
+    background:#DCD9D9;
+    width:prem(400);
+    border:2px solid rgba(31,32,36,.8);
+    border-radius:prem(9);
+    font-size:prem(16);
+    letter-spacing:prem(2);
+    color:#5C5C5F;
+    padding:.8rem 1rem;
+    font-family:$poppins;
+  }
+
+  label {
+    justify-content:left;
+    user-select:none;
+    position:relative;
+    font-family:$poppins;
+    letter-spacing:prem(2);
+    opacity:.6;
+    left:-6.2rem;
+    top:-2.5rem;
+    text-align:center;
+    color:#5C5C5F;
+    background:#DCD9D9;
+    text-align:left;
+    -webkit-animation:label-down-saque .3s linear forwards;
+    animation:label-down-saque .3s linear forwards;
+  }
+
+  input:focus + label, input.checked + label.up, label.up {
+    -webkit-animation:label-up-saque .3s linear forwards;
+    animation:label-up-saque .3s linear forwards;
+  }
+
+  input:focus + label:after {
+    display:block;
+    position:absolute;
+    font-size:prem(11);
+    color:$leve-white;
+    width:18rem;
+    top:4rem;
+    left:10.8rem;
+    -webkit-animation:show-label-after .6s linear forwards;
+    animation:show-label-after .6s linear forwards;
+  }
+
+  input.checked {
+    border:2px solid #854DFF;
+    box-shadow:0px 0px 9px 0 #854DFF;
+  }
+
+  input.checked + label.up {
+    box-shadow:0px -1px 1px 0 #854DFF;
+    border-top:2px solid #854DFF !important;
+    border-left:2px solid #854DFF !important;
+    border-right:2px solid #854DFF !important;
+  }
+
+  input.checked:focus + label.up:after {
+    content:'';
+  }
+
+  .major-button {
+    margin-top:1.2rem;
+    width:prem(300);
+  }
+
+  .transacoes {
+    margin-top:2rem;
+    margin-left:prem(9);
+
+    h2, p {
+      justify-self:left;
+    }
+
+    p {
+      width:prem(400);
+    }
+  }
+
+  .historico {
+    @include grid;
+    gap:.5rem;
+    margin-top:1rem;
+
+    li {
+      background:linear-gradient(0deg, #432680 0%, #854DFF 100%);
+      border-radius:prem(6);
+      color:rgba(251,251,251,.8);
+      padding:.25rem 1rem;
+      @include flex;
+      border:2px solid #1f2024;
+      justify-content:space-between;
+      width:prem(400);
+    }
+  }
+}
+
+@media (max-width:prem(500)) {
+  .saque article {
+    form {
+      label {
+        width:prem(175) !important;
+        text-align:left;
+        left:-1.5rem !important;
+        top:-2.3rem !important;
+        -webkit-animation:label-down-jogo-mobile .3s linear forwards;
+        animation:label-down-jogo-mobile .3s linear forwards;
+        transition:.3s;
+        border-top:0px solid rgba(31,32,36,.8) !important;
+    border-left:0px solid rgba(31,32,36,.8) !important;
+    border-right:0px solid rgba(31,32,36,.8) !important;
+      }
+
+      input:focus + label, label.up {
+        -webkit-animation:label-up-jogo-mobile .3s linear forwards;
+        animation:label-up-jogo-mobile .3s linear forwards;
+        border-top:2px solid rgba(31,32,36,.8) !important;
+    border-left:2px solid rgba(31,32,36,.8) !important;
+    border-right:2px solid rgba(31,32,36,.8) !important;
+        transition:.3s;
+        width:prem(120) !important;
+        top:prem(-67) !important;
+        text-align:center;
+        left:-3rem !important;
+        font-size:prem(12) !important;
+      }
+
+      input.checked + label.up {
+        border-top:2px solid #854DFF !important;
+    border-left:2px solid #854DFF !important;
+    border-right:2px solid #854DFF !important;
+      }
+    
+      input:focus + label:after {
+        width:max-content;
+        top:4.1rem !important;
+        left:5.5rem !important;
+      }
+    }
+  }
+}

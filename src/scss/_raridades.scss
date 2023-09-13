@@ -1,0 +1,359 @@
+.raridades {
+  width:100vw;
+  padding:7rem 0;
+  border-top:20px solid #1f2024;
+  border-bottom:20px solid #1f2024;
+
+  &, article {
+    @include grid;
+  }
+
+  article {
+    background:#1A936F;
+      background-image:linear-gradient(-30deg, #C1DF1F -30%, #1A936F 50%, #C1DF1F 130%);
+    width:prem(880);
+    padding:3rem 2rem;
+    border-radius:prem(23);
+    border:12px solid #1f2024;
+    gap:6rem;
+  }
+
+  h1, h2 {
+    color:$leve-white;
+  }
+
+  .base, section, li {
+    @include flex;
+  }
+
+  li {
+    border-radius:prem(3);
+    width:prem(370);
+    padding:4px 90px 4px 8px;
+    justify-content:space-between;
+  }
+
+  .base {
+    justify-content:space-between;
+    width:100%;
+    flex-wrap:wrap;
+
+    h1 {
+      font-size:prem(80);
+    }
+  
+    p {
+      font-size:prem(15);
+      font-family:$spaceMono;
+      width:prem(290); 
+      position:relative;
+      top:prem(11);
+    }
+  }
+
+  svg {
+    width:prem(300);
+    position:relative;
+    top:prem(-220);
+  }
+
+  section {
+    align-items:start;
+    gap:2rem;
+  }
+
+  .tipos h2, .variados h2 {
+    margin-bottom:1rem;
+  }
+
+  .tipos {
+    display:grid;
+    place-items:left;
+    height:prem(400);
+
+    li {
+      gap:1rem;
+
+      &:nth-child(even) {
+        background:#E3B23C;
+      }
+    }
+  }
+
+  .variados {
+    li {
+      &:nth-child(even) {
+        background:#F3DFBF;
+      }
+
+      &:last-child {
+        background:#E3B23C;
+      }
+    }
+  }
+
+  ul {
+    display:grid;
+    gap:prem(10);
+  }
+}
+
+.pix {
+  width:100vw;
+  padding:5rem 0;
+  background:#006BA6;
+  border-bottom:26px solid #1f2024;
+
+  &, article {
+    @include grid;
+  }
+
+  article {
+    opacity:1;
+    border-radius:prem(27);
+    border:9px solid #1f2024;
+    padding:1rem 2rem 2rem 2rem;
+    gap:2rem;
+    width:prem(880);
+    background:$leve-white;
+    color:$onyx;
+
+    h1, p {
+      justify-self:left;
+    }
+
+    h1 {
+      font-size:prem(52);
+      width:prem(430);
+      line-height:prem(40);
+
+      svg {
+        position:relative;
+        top:prem(18);
+
+        &:last-child {
+          top:prem(9);
+        }
+      }
+    }
+
+    p {
+      letter-spacing:1px;
+      width:prem(420);
+      font-family:$poppins;
+    }
+
+    .paixao {
+      transform:scaleX(-1) rotate(-23deg);
+      filter:FlipH;
+      position:absolute;
+      width:prem(50);
+      opacity:.4;
+      margin-top:12rem;
+      margin-left:48rem;
+    }
+  }
+}
+
+@media (max-width:prem(975)) {
+  .raridades {
+    border:12px solid #1f2024;
+
+    article {
+      border:8px solid #1f2024;
+      width:90vw;
+      gap:4rem;
+    }
+
+    .base {
+      width:100%;
+      gap:.5rem;
+      justify-content:space-between;
+
+      h1 {
+        font-size:prem(55);
+      }
+
+      p {
+        top:prem(15);
+        width:prem(270);
+      }
+    }
+
+    .tipos {
+      height:prem(500);
+    }
+
+    svg {
+      width:prem(230);
+      position:relative;
+      top:prem(-290);
+    }
+
+    section {
+      flex-wrap:wrap;
+      gap:0;
+      width:100%;
+      justify-content:space-between;
+    }
+
+    li {
+      width:prem(230);
+      padding:4px 4px 4px 8px;
+    }
+  }
+
+  .pix {
+    article {
+      width:prem(480);
+      padding:1rem 1rem 2rem 1rem;
+
+      .paixao {
+        margin-left:13rem;
+        display:none;
+      }
+    }
+  }
+}
+
+@media (max-width:prem(600)) {
+  .raridades {
+    svg {
+      width:prem(150);
+      position:relative;
+      top:prem(-290);
+    }
+
+    li {
+      width:prem(180);
+      padding:4px 2px 4px 8px;
+    }
+  }
+}
+
+@media (max-width:prem(500)) {
+  .raridades {
+    article {
+      padding:2rem 1rem;
+      gap:2rem;
+    }
+
+    .base {
+      h1 {
+        font-size:prem(40);
+      }
+    }
+
+    svg {
+      width:prem(130);
+      position:relative;
+      top:prem(-290);
+    }
+
+    li {
+      width:prem(150);
+      gap:.25rem;
+      padding:4px 2px 4px 8px;
+    }
+  }
+
+  .pix {
+    
+    article {
+      width:95vw;
+      overflow:hidden;
+
+      h1 {
+        font-size:prem(27);
+        width:100%;
+  
+        svg {
+          position:relative;
+          top:prem(28);
+          width:prem(60);
+  
+          &:last-child {
+            display:none;
+          }
+        }
+      }
+
+      p {
+        width:100%;
+      }
+
+      .paixao {
+        margin-left:9rem;
+        opacity:.2;
+      }
+    }
+  }
+}
+
+@media (max-width:prem(390)) {
+  .raridades {
+    border:7px solid #1f2024;
+
+    article {
+      border:4px solid #1f2024;
+      padding:2rem 1rem;
+      gap:2rem;
+    }
+
+    .tipos {
+      height:prem(400);
+    }
+
+    .base {
+      h1 {
+        font-size:prem(40);
+      }
+    }
+
+    .variados {
+      width:100%;
+      li {
+        width:100% !important;
+      }
+    }
+
+    svg {
+      width:prem(130);
+      top:prem(-320);
+    }
+
+    li {
+      width:100%;
+      gap:.25rem;
+      padding:4px 2px 4px 8px;
+    }
+  }
+}
+
+@media (max-width:prem(340)) {
+  .raridades {
+    .tipos {
+      height:prem(440);
+    }
+
+    article {
+      section {
+        width:100% !important;
+      }
+    }
+
+    .variados {
+      margin-top:-2rem;
+      
+      li {
+        width:220px !important;
+      }
+    }
+
+    li {
+      width:220px !important;
+      padding:4px 2px 4px 8px;
+      justify-content:space-between;
+    }
+  }
+}
