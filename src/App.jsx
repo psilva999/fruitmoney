@@ -49,9 +49,9 @@ const App = () => {
         <Outlet/>
       </main>
 
-      <Link to='admin'>
+      <Link to='/fruitmoney/admin'>
         <button 
-          className='admin active'
+          className='admin'
           onClick={ handleLinks }>
           <Admin/>
         </button>

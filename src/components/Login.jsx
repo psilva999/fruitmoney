@@ -59,6 +59,7 @@ const Login = () => {
 
   const handleLogin = (event) => {
     event.preventDefault()
+    document.querySelector('.admin').classList.add('active')
 
     const email = document.querySelector('#emailLogin'),
           senha = document.querySelector('#password')
@@ -93,7 +94,7 @@ const Login = () => {
       document.querySelector('#button-login').disabled = true
 
       window.scrollTo(0, 0)
-      navigate('/jogar')
+      navigate('/fruitmoney/jogar')
 
       handleItems(document.querySelectorAll('.abas li'), 0)
 

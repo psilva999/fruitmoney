@@ -49,7 +49,7 @@ const Indique = () => {
           </li>
 
 
-          <NavLink to="/saque">
+          <NavLink to="/fruitmoney/saque">
             <button 
               className='major-button'
               onClick={ toSaque }>Sacar saldo disponível</button>

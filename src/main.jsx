@@ -22,24 +22,24 @@ import Admin from './components/Admin.jsx'
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: '/fruitmoney',
     element: <App/>,
     
     children: [
-      { path:'/', element: <Apresentacao/> },
-      { path:'/jogar', element: <Jogar/> },
+      { path:'/fruitmoney', element: <Apresentacao/> },
+      { path:'/fruitmoney/jogar', element: <Jogar/> },
 
-      { path:'/saque', element: <Saque/> },
-      { path:'/afiliados', element: <Afiliados/> },
-      { path:'/indique', element: <Indique/> },
+      { path:'/fruitmoney/saque', element: <Saque/> },
+      { path:'/fruitmoney/afiliados', element: <Afiliados/> },
+      { path:'/fruitmoney/indique', element: <Indique/> },
 
-      { path:'/deposito', element: <Deposito/> },
-      { path:'/admin', element: <Admin/> },
+      { path:'/fruitmoney/deposito', element: <Deposito/> },
+      { path:'/fruitmoney/admin', element: <Admin/> },
     ],
   },
 
   {
-    path: '/game',
+    path: '/fruitmoney/game',
     element: <Game/>,
   }
 ])

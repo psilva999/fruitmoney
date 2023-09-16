@@ -103,6 +103,7 @@ const Header = () => {
 
   handleSair = () => {
     window.scrollTo(0, 0)
+    document.querySelector('.admin').classList.remove('active')
 
     document.querySelector('header').classList.remove('user')
     document.querySelector('.admin').classList.remove('active')
@@ -164,36 +165,36 @@ const Header = () => {
   }
 
   return (
-    <header id={ fixed? 'fixed' : '' } className='user'>
+    <header id={ fixed? 'fixed' : '' } className=''>
 
       <img src={ Logo } alt='logo' className='logo'/>
-      <nav className='abas active'>
+      <nav className='abas'>
         <button className='toggle-user' onClick={ handleUser }></button>
 
         <ul>
-          <Link to='/jogar'>
+          <Link to='/fruitmoney/jogar'>
             <li onClick={ () => handleLink(0) }>Jogar</li>
           </Link>
 
-          <Link to='/saque'>
+          <Link to='/fruitmoney/saque'>
             <li onClick={ () => handleLink(1) }>Saque</li>
           </Link>
 
-          <Link to='/afiliados'>
+          <Link to='/fruitmoney/afiliados'>
             <li onClick={ () => handleLink(2) }>Link de Afiliado</li>
           </Link>
 
-          <Link to='/indique'>
+          <Link to='/fruitmoney/indique'>
             <li onClick={ () => handleLink(3) }>Indique um amigo</li>
           </Link>
 
-          <Link to='/'>
+          <Link to='/fruitmoney/'>
             <li 
               className='sair'
               onClick={ () => handleSair() }>Sair</li>
           </Link>
 
-          <Link to='/deposito'>
+          <Link to='/fruitmoney/deposito'>
             <li 
               className='diferent'
               onClick={ ativaDeposito }>DEPÓSITO</li>
@@ -201,12 +202,12 @@ const Header = () => {
         </ul>
       </nav>
 
-      <nav className='sem-log'>
+      <nav className='sem-log active'>
         <button className='toggle-home' onClick={ handleMenu }>
         </button>
 
         <ul>
-          <li className='telegram'><a href="https://t.megame" target='_blank' rel='noreferrer'><Telegram/></a></li>
+          <li className='telegram'><a href="https://t.me/fruitmoneygame" target='_blank' rel='noreferrer'><Telegram/></a></li>
 
           <li onClick={ openTabUser }>Login</li>
 

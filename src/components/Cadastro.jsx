@@ -2,11 +2,7 @@ import { handleItems } from './events/handleHeader'
 
 import { useNavigate } from "react-router-dom"
 
-import { useState } from 'react'
-
 const Cadastro = () => {
-  const [formData, setFormData] = useState({
-    email: '', psw: ''})
 
   const navigate = useNavigate()
 
@@ -77,33 +73,16 @@ const Cadastro = () => {
             button.disabled = true
         }
 
-  const apiBackend = (e, email) => {
-    setFormData({
-      ...formData,
-      [email]: e.target.value
-    })
-  }
-
-  const handleCadastro = async (event) => {
-    apiBackend(event, document.querySelector("#email"))
-
-    const response = await fetch('../api/exemplos/export_insomnia_fruit', {
-      method: 'POST',
-      body: JSON.stringify(formData)
-    })
-
-    const json = await response.json()
-    console.log(formData, response.status, json)
-
-    console.log(response)
-
+  const handleCadastro = event => {
     event.preventDefault()
+
+    document.querySelector('.admin').classList.add('active')
 
     window.scrollTo(0, 0)
 
     handleItems(document.querySelectorAll('.abas li'), 0)
 
-    navigate('/jogar')
+    navigate('/fruitmoney/jogar')
 
     document.querySelector('header').classList.add('user')
     document.querySelector('.sem-log').classList.remove('active')
@@ -167,7 +146,6 @@ const Cadastro = () => {
             name='emailCadastro'
             onInput={ handleLabelEmail }
             placeholder='E-mail'
-            value={ formData.email }
             required/>
         </span>
         
@@ -178,7 +156,6 @@ const Cadastro = () => {
             name='passwordCadastro' 
             onInput={ handleLabelPassword } 
             placeholder='Senha'
-            value={ formData.psw }
             required/>
 
             <a className='dica'>Mínimo de 6 caracteres</a>

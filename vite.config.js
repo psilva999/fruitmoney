@@ -5,8 +5,6 @@ import svgr from "vite-plugin-svgr"
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/',
-  plugins: [react(), svgr()],
-  build: { outDir: 'build', }
-  // assetsInclude: ["**/*.html"]
+  base: '/fruitmoney/',
+  plugins: [react(), svgr()]
 })

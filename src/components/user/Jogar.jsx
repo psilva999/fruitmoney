@@ -80,7 +80,7 @@ const Jogar = () => {
         </form>
 
         <div> 
-          <Link to='/game'>
+          <Link to='/fruitmoney/game'>
             <button 
               className='major-button testar' 
               disabled>Testar</button>
