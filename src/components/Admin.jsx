@@ -27,6 +27,10 @@ const Admin = () => {
     event.preventDefault()
   }
 
+  const handleFrutas = event => {
+    event.preventDefault()
+  }
+
   return (
     <section className="dashboard">
       <nav>
@@ -217,7 +221,7 @@ const Admin = () => {
         </div>
 
         <div className='bonus'>
-          <h2>Bônus</h2>
+          <h2>Bônus + Valor das frutas</h2>
 
           <form onSubmit={ handleUsers }>
             <p>
@@ -245,6 +249,22 @@ const Admin = () => {
             </ul>
 
             <button type='submit' className='major-button min'>ATUALIZAR</button>
+          </form>
+
+          <form onSubmit={ handleFrutas }>
+            <p>
+              <label htmlFor="nUsers">Valor p/Frutas </label>
+              <input type="text" id='nUsers' name='nUsers' value='5%' readOnly/>
+            </p>
+
+            <ul className='ajusta-pcx'>
+              <li>-</li>
+              <li>+</li>
+            </ul>
+
+            <button type='submit' className='major-button min'>ATUALIZAR</button>
+
+            <strong>Obs: % varia com o valor que o usuário inserir pra jogar</strong>
           </form>
         </div>
 

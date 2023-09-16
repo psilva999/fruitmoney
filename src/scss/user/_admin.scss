@@ -280,8 +280,19 @@
     justify-content:left;
     flex-wrap:wrap;
     width:prem(700);
-    margin-top:2rem;
+    margin-top:5rem;
     gap:1rem;
+
+    strong {
+      width:prem(250);
+      margin:auto;
+      text-align:center;
+      color:#EAF0CE;
+      font-weight:600;
+      font-size:prem(13);
+      letter-spacing:2px;
+      font-family:$poppins;
+    }
 
     h2 {
       width:100%;
@@ -424,7 +435,7 @@
   .produtores, .usuarios {
     @include flex;
     justify-content:left;
-    margin-top:2rem;
+    margin-top:5rem;
     flex-wrap:wrap;
     width:prem(750);
     gap:1rem;
@@ -577,7 +588,7 @@
   }
 
   .lucros {
-    margin-top:2rem;
+    margin-top:5rem;
     display:grid;
     gap:1rem;
     width:max-content;
